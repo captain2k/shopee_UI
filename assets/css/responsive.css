@@ -1,0 +1,218 @@
+ /* tablet and moblie*/
+ @media (max-width: 1023px){
+    :root{
+         --header-height: 68px;
+         --header-navbar-height: 0px;
+    }
+
+    .header{
+        position: fixed;
+        z-index: 10;
+        top: 0;
+    }
+
+    .header__cart-list{
+        position: fixed;
+        width: 100%;
+        top: var(--header-with-search-height);
+        right: 0;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+
+    .header__cart-list::before{
+        display: none;
+    }
+
+    .header__sort-bar{
+        padding-left: 0;
+        display: flex;
+        list-style: none;
+        background-color: var(--white-color);
+        margin: 0;
+        height: var(--header-sort-bar-height);
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .header__sort-item{
+        flex: 1;
+    }
+
+    .header__sort-item-link{
+        text-decoration: none;
+        font-size: 1.2rem;
+        line-height: var(--header-sort-bar-height);
+        color: var(--text-color);
+        display: block;
+        text-align: center;
+        position: relative;
+    }
+
+    .header__sort-item-link::after{
+        position: absolute;
+        content: "";
+        height: 60%;
+        top: 50%;
+        right: 0;
+        border-left: 1px solid #e5e5e5;
+        transform: translateY(-50%);
+    }
+
+    .header__sort-item-link--active{
+        color: var(--primary-color);
+    }
+
+    .header__sort-item:last-child .header__sort-item-link::after{
+        display: none;
+    }
+
+    .app__container{
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+
+    .app__content{
+        padding-top: 24px;
+    }
+
+    .hide-on-tablet-mobile{
+        display: none;
+    }
+
+    .tabmob__category{
+        display: block;
+    }
+ } 
+
+ /* tablet */
+ @media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+
+    .header__cart {
+        width: 110px;
+        text-align: right;
+    }
+
+    .header__cart-have-cart-list{
+        max-height: 45vh;
+    }
+ }
+
+ /* Moblie */
+ @media (max-width: 739px){
+    .hide-on-moblie{
+        display: none;
+    }
+
+    .header__btn-on-moblie{
+        display: inline-flex;
+        flex: 1;
+    }
+
+    .nav__bars-btn{
+        margin-right: 16px;
+    }
+
+    .nav__bars-btn i{
+        font-size: 1.4rem;
+        color: var(--white-color);
+    }
+
+    .nav__search-moblie{
+
+    }
+
+    .nav__search-moblie i {
+        font-size: 1.4rem;
+    }
+
+    .header__logo{
+        text-align: center;
+        flex: 1;
+    }
+
+    .header__cart{
+        flex: 1px;
+        text-align: right;
+    }
+
+    .header__input:checked ~ .header__overlay-on-mobile{
+        display: block;
+    }
+
+    .header__input:checked ~ .nav__bars-list{
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform linear 0.2s, opacity linear 0.2s;
+    }
+
+    .header__overlay-on-mobile{
+        display: none;
+        z-index: 1;
+    }
+
+    .header__with__search{
+        position: relative;
+    }
+
+    .header__search{
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        z-index: 1;
+        padding: 0 16px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        display: none;
+        height: 46px;
+        animation: showHeaderSearchOnMobile linear 0.3s;
+    }
+
+    .header__search-icon{
+        height: unset;
+    }
+
+    .header__search-checkbox:checked ~ .header__search{
+        display: flex;
+    }
+
+    .home__pagination{
+        padding: 24px 0;
+    }
+
+    .home__pagination-btn {
+        margin: 0px 2px
+    }
+
+    .home__pagination-btn-current{
+        margin: 0px 8px;
+        min-width: 24px;
+    }
+
+    .app__content{
+        margin: 0 4px;
+    }
+
+    .footer__content{
+        padding: 0 16px;
+    }
+
+
+    @keyframes showHeaderSearchOnMobile {
+        from{
+            top: calc(var(--header-height) / 2) ;
+        }
+
+        to{
+            top: var(--header-height);
+        }
+    }
+ }
+
+ /* PC small screen */
+ @media (min-width: 1023px) and (max-width: 1239px){
+    .home__filter{
+        font-size: 1.2rem;
+    }
+ }
